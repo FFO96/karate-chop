@@ -4,7 +4,10 @@ import "fmt"
 
 func main() {
 
-	fmt.Println(iterChop(50, []int{1, 3, 4, 5, 8, 9, 10}))
+	orderedArray := []int{1, 2, 4, 5, 8, 9, 10}
+	target := 4
+	fmt.Println(iterChop(target, orderedArray))
+	fmt.Println(recursiveChop(target, 0, len(orderedArray)-1, orderedArray))
 
 }
 
@@ -26,11 +29,24 @@ func iterChop(target int, orderedArray []int) int {
 			return mid
 		}
 	}
-
 	return -1
 }
 
-/*
-func recursiveChop(target int, orderedArray []int) int {
+// Second implementation: Recursive method
+func recursiveChop(target, first, last int, orderedArray []int) int {
+
+	if first <= last {
+
+		mid := (first + last) / 2
+
+		if orderedArray[mid] > target {
+			return recursiveChop(target, first, mid-1, orderedArray)
+		} else if orderedArray[mid] < target {
+			first = mid + 1
+			return recursiveChop(target, mid+1, last, orderedArray)
+		} else {
+			return mid
+		}
+	}
 	return -1
-}*/
+}
