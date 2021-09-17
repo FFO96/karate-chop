@@ -19,10 +19,10 @@ When solving the problem, we have distinguished two implementations but in the c
 - <a id="target">**Target**</a>: Int value to search in the SIA.
 - <a id="sia">**SIA**</a>: Sorted int array.
 
-## Reference
-Word-chain problem: [http://codekata.com/kata/kata02-karate-chop/](http://codekata.com/kata/kata02-karate-chop/)
-
 ## Run the progam
 
 - **Normal program**</a>: go run src/main.go
 - **Testing**</a>: go test src/main_test.go src/main.go -v
+
+## Reference
+Word-chain problem: [http://codekata.com/kata/kata02-karate-chop/](http://codekata.com/kata/kata02-karate-chop/)
